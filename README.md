@@ -1,62 +1,48 @@
-1. Sales Overview:
 
-YTD Total Sales:
+**Car Sales Dashboard Project**
+**Background**
+Our company, a thriving car dealership, recognizes the importance of efficient sales tracking and analysis. To streamline this process, we aim to develop a dynamic and interactive Car Sales Dashboard using Power BI. This dashboard will serve as a central hub for visualizing crucial Key Performance Indicators (KPIs) related to our car sales, empowering us to make informed, data-driven decisions.
 
-Formula: YTD Total Sales = TOTALYTD(SUM(Sales[SalesAmount]), 'Date'[Date])
-MTD Total Sales:
+**Objective**
+The primary goal of this project is to design and develop a comprehensive Car Sales Dashboard using Power BI. The dashboard will provide real-time insights into our sales data, offering a holistic view of our performance over time. This will enable us to identify trends, monitor progress, and make strategic decisions for future growth.
 
-Formula: MTD Total Sales = TOTALMTD(SUM(Sales[SalesAmount]), 'Date'[Date])
-YOY Growth in Total Sales:
+**Problem Statement 1: KPI’s Requiremen**t
+The dashboard will include the following key performance indicators:
 
-Formula: YOY Growth = DIVIDE(SUM(Sales[SalesAmount]) - CALCULATE(SUM(Sales[SalesAmount]), SAMEPERIODLASTYEAR('Date'[Date])), CALCULATE(SUM(Sales[SalesAmount]), SAMEPERIODLASTYEAR('Date'[Date])))
-Difference (YTD vs. PTYD Sales):
+**Sales Overview:
+**
+Year-to-Date (YTD) Total Sales
+Month-to-Date (MTD) Total Sales
+Year-over-Year (YOY) Growth in Total Sales
+Difference between YTD Sales and Previous Year-to-Date (PTYD) Sales
+Average Price Analysis:
 
-Formula: Difference YTD vs PTYD = [YTD Total Sales] - CALCULATE([YTD Total Sales], DATEADD('Date'[Date], -1, YEAR))
-2. Average Price Analysis:
+YTD Average Price
+MTD Average Price
+YOY Growth in Average Price
+Difference between YTD Average Price and PTYD Average Price
+Cars Sold Metrics:
 
-YTD Average Price:
+YTD Cars Sold
+MTD Cars Sold
+YOY Growth in Cars Sold
+Difference between YTD Cars Sold and PTYD Cars Sold
+**Problem Statement 2: Charts Requirement**
+YTD Sales Weekly Trend:
 
-Formula: YTD Average Price = [YTD Total Sales] / [YTD Cars Sold]
-MTD Average Price:
+Display a line chart illustrating the weekly trend of YTD sales. X-axis represents weeks, and Y-axis shows the total sales amount.
+YTD Total Sales by Body Style:
 
-Formula: MTD Average Price = [MTD Total Sales] / [MTD Cars Sold]
-YOY Growth in Average Price:
+Visualize the distribution of YTD total sales across different car body styles using a Pie chart.
+YTD Total Sales by Color:
 
-Formula: YOY Growth in Avg Price = DIVIDE([YTD Average Price] - CALCULATE([YTD Average Price], SAMEPERIODLASTYEAR('Date'[Date])), CALCULATE([YTD Average Price], SAMEPERIODLASTYEAR('Date'[Date])))
-Difference (YTD vs. PTYD Average Price):
+Present the contribution of various car colors to the YTD total sales through a pie chart.
+YTD Cars Sold by Dealer Region:
 
-Formula: Difference YTD vs PTYD Avg Price = [YTD Average Price] - CALCULATE([YTD Average Price], DATEADD('Date'[Date], -1, YEAR))
-3. Cars Sold Metrics:
+Showcase the YTD sales data based on different dealer regions using a map chart to visualize the sales distribution geographically.
+Company-Wise Sales Trend in Grid Form:
 
-YTD Cars Sold:
+Provide a tabular grid that displays the sales trend for each company, showcasing the company name along with their YTD sales figures.
+Details Grid Showing All Car Sales Information:
 
-Formula: YTD Cars Sold = CALCULATE(SUM(Sales[CarsSold]), 'Date'[Date])
-MTD Cars Sold:
-
-Formula: MTD Cars Sold = CALCULATE(SUM(Sales[CarsSold]), DATESMTD('Date'[Date]))
-YOY Growth in Cars Sold:
-
-Formula: YOY Growth in Cars Sold = DIVIDE([YTD Cars Sold] - CALCULATE([YTD Cars Sold], SAMEPERIODLASTYEAR('Date'[Date])), CALCULATE([YTD Cars Sold], SAMEPERIODLASTYEAR('Date'[Date])))
-Difference (YTD vs. PTYD Cars Sold):
-
-Formula: Difference YTD vs PTYD Cars Sold = [YTD Cars Sold] - CALCULATE([YTD Cars Sold], DATEADD('Date'[Date], -1, YEAR))
-📈 Problem Statement 2: Charts Requirement
-
-1. YTD Sales Weekly Trend:
-
-Formula: No specific formula. Utilizes a line chart with 'Weeks' on the X-axis and 'Total Sales Amount' on the Y-axis.
-2. YTD Total Sales by Body Style:
-
-Formula: Utilizes a Pie chart with 'Body Style' as the category and 'Total Sales Amount' as the values.
-3. YTD Total Sales by Color:
-
-Formula: Utilizes a Pie chart with 'Car Color' as the category and 'Total Sales Amount' as the values.
-4. YTD Cars Sold by Dealer Region:
-
-Formula: Utilizes a Map chart with 'Dealer Region' and 'Total Cars Sold' as data points.
-5. Company-Wise Sales Trend in Grid Form:
-
-Formula: Utilizes a table visualization with 'Company Name' and 'YTD Sales Figures' as columns.
-6. Details Grid Showing All Car Sales Information:
-
-Formula: Utilizes a detailed table showcasing various attributes like 'Car Model', 'Body Style', 'Color', 'Sales Amount', 'Dealer Region', 'Date', etc.
+Create a detailed grid presenting all relevant information for each car sale, including car model, body style, color, sales amount, dealer region, date, etc.
