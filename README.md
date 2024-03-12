@@ -69,15 +69,19 @@ Sales Difference = YTD Total Sales - PTYD Total Sales
 
 **YTD Average Price**:
 YTD Average Price = DIVIDE(YTD Total Sales, YTD Cars Sold)
+
 **MTD Average Price**:
 MTD Average Price = DIVIDE(MTD Total Sales, MTD Cars Sold)
+
 **YOY Growth in Average Price**:
 
 YOY Avg. Price Growth = (YTD Average Price - PTYD Average Price) / PTYD Average Price
+
 **Difference between YTD Average Price and PTYD Average Price**:
 
 
 Avg. Price Difference = YTD Average Price - PTYD Average Price
+
 **Cars Sold Metrics**:
 YTD Cars Sold:
 
@@ -86,9 +90,11 @@ YTD Cars Sold = COUNTROWS(Sales)
 
 
 MTD Cars Sold = COUNTROWS(FILTER(Sales, 'Date'[Date] <= MAX('Date'[Date])))
+
 **YOY Growth in Cars Sold**:
 
 YOY Cars Sold Growth = (YTD Cars Sold - PTYD Cars Sold) / PTYD Cars Sold
+
 **Difference between YTD Cars Sold and PTYD Cars Sold**:
 
 
