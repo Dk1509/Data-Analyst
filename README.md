@@ -54,9 +54,50 @@ To explore and deploy the Car Sales Dashboard, follow these steps:
    git clone https://github.com/your-username/car-sales-dashboard.git
 2 **Navigate to project directory.**
 cd car-sales-dashboard
+
+**Formula Used**
+YTD Total Sales = SUM(Sales[SalesAmount])
+Month-to-Date (MTD) Total Sales:MTD Total Sales = TOTALMTD(SUM(Sales[SalesAmount]), 'Date'[Date])
+
+Year-over-Year (YOY) Growth in Total Sales:
+YOY Growth = (YTD Total Sales - PTYD Total Sales) / PTYD Total Sales
+
+Difference between YTD Sales and Previous Year-to-Date (PTYD) Sales:
+Sales Difference = YTD Total Sales - PTYD Total Sales
+
+**Average Price Analysis**:
+
+**YTD Average Price**:
+YTD Average Price = DIVIDE(YTD Total Sales, YTD Cars Sold)
+**MTD Average Price**:
+MTD Average Price = DIVIDE(MTD Total Sales, MTD Cars Sold)
+**YOY Growth in Average Price**:
+
+YOY Avg. Price Growth = (YTD Average Price - PTYD Average Price) / PTYD Average Price
+**Difference between YTD Average Price and PTYD Average Price**:
+
+
+Avg. Price Difference = YTD Average Price - PTYD Average Price
+**Cars Sold Metrics**:
+YTD Cars Sold:
+
+YTD Cars Sold = COUNTROWS(Sales)
+**MTD Cars Sold**:
+
+
+MTD Cars Sold = COUNTROWS(FILTER(Sales, 'Date'[Date] <= MAX('Date'[Date])))
+**YOY Growth in Cars Sold**:
+
+YOY Cars Sold Growth = (YTD Cars Sold - PTYD Cars Sold) / PTYD Cars Sold
+**Difference between YTD Cars Sold and PTYD Cars Sold**:
+
+
+Cars Sold Difference = YTD Cars Sold - PTYD Cars Sold
+
 3 **Open Power BI**:
 
 Launch Power BI and open the project file (car_sales_dashboard.pbix).
+
 4 **Explore the Dashboard**:
 
 Interact with the different visuals and charts to gain insights into our car sales performance.
